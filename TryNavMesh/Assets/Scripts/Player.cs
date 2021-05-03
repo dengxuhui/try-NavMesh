@@ -1,11 +1,25 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.AI;
+using UnityStandardAssets.Characters.ThirdPerson;
 
 public class Player : MonoBehaviour
 {
     public Camera cam;
 
     public NavMeshAgent agent;
+
+    public ThirdPersonCharacter character;
+
+    private void Start()
+    {
+        if (cam == null)
+        {
+            cam = Camera.main;
+        }
+
+        agent.updateRotation = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -18,5 +32,18 @@ public class Player : MonoBehaviour
                 agent.SetDestination(hit.point);
             }
         }
+
+        if (character)
+        {
+            if (agent.remainingDistance > agent.stoppingDistance)
+            {
+                character.Move(agent.desiredVelocity, false, false);
+            }
+            else
+            {
+                character.Move(Vector3.zero, false, false);
+            }
+        }
+        
     }
 }

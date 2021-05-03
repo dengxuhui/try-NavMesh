@@ -27,3 +27,22 @@ youtube教程一同学习，学习链接：[NavMesh-Tutorial视频教程](https:
 
 ### NavMeshAgent
 让角色能在网格中导航的代理
+
+
+### 动态烘培网格图
+阻挡物上添加NavMeshObstacle,可以设置在网格中的阻挡。
+
+勾选Carve会动态计算阻挡并规划路径，如果不勾选，只是存在阻挡，不会将阻挡计算在可路径规划中。就会出现撞墙的现象。
+
+在NavMeshAgent中Obstacle Avoidance中可以设置对于阻挡物的设置。
+
+```c#
+//在启动的时候掉用
+NavMeshSurface surface;
+surface.BuildNavMesh();//动态生成网格图
+```
+
+### 使用NavMeshLink链接两块NavMesh网格
+链接两个关卡连接处
+- Bidirectional：设置单项链接
+

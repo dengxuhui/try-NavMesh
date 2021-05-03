@@ -3,6 +3,10 @@
 由于原本NavMesh教程中缺少部分代码，所以在这个项目中把缺失的代码补全。如果您也是初次尝试NavMesh，可以配合
 youtube教程一同学习，学习链接：[NavMesh-Tutorial视频教程](https://www.youtube.com/watch?v=CHV1ymlw-P8&t=600s)
 
+## 内容说明
+- Example01 - 05是NavMesh-Tutorial内容补充
+- 
+
 ## Notes
 
 ### NavMeshSurface
